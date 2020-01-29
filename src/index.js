@@ -120,3 +120,53 @@ const FastImageView = requireNativeComponent('FastImageView', FastImage, {
 })
 
 export default FastImage
+
+////// const isGIF = resolvedSource.uri.includes('.gif')
+
+function FastImageGIFBase({
+    source,
+    tintColor,
+    onLoadStart,
+    onProgress,
+    onLoad,
+    onError,
+    onLoadEnd,
+    style,
+    children,
+    fallback,
+    forwardedRef,
+    ...props
+}) {
+    return (
+        <View style={[styles.imageContainer, style]} ref={forwardedRef}>
+            <FastImageView
+                {...props}
+                tintColor={tintColor}
+                style={StyleSheet.absoluteFill}
+                source={resolvedSource}
+                onFastImageLoadStart={onLoadStart}
+                onFastImageProgress={onProgress}
+                onFastImageLoad={onLoad}
+                onFastImageError={onError}
+                onFastImageLoadEnd={onLoadEnd}
+            />
+            {children}
+        </View>
+    )
+}
+
+const FastImageGIFMemo = memo(FastImageGIFBase)
+
+const FastImageGIF = forwardRef((props, ref) => (
+    <FastImageGIFMemo forwardedRef={ref} {...props} />
+))
+
+export const FastImageGIFView = requireNativeComponent('FastImageView', FastImageGIF, {
+    nativeOnly: {
+        onFastImageLoadStart: true,
+        onFastImageProgress: true,
+        onFastImageLoad: true,
+        onFastImageError: true,
+        onFastImageLoadEnd: true,
+    },
+})

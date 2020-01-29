@@ -10,31 +10,17 @@ PODS:
     - boost-for-react-native
     - DoubleConversion
     - glog
+  - Gifu (3.2.2)
   - glog (0.3.5)
-  - libwebp (1.0.2):
-    - libwebp/core (= 1.0.2)
-    - libwebp/dec (= 1.0.2)
-    - libwebp/demux (= 1.0.2)
-    - libwebp/dsp (= 1.0.2)
-    - libwebp/enc (= 1.0.2)
-    - libwebp/mux (= 1.0.2)
-    - libwebp/utils (= 1.0.2)
-    - libwebp/webp (= 1.0.2)
-  - libwebp/core (1.0.2):
+  - libwebp (1.1.0):
+    - libwebp/demux (= 1.1.0)
+    - libwebp/mux (= 1.1.0)
+    - libwebp/webp (= 1.1.0)
+  - libwebp/demux (1.1.0):
     - libwebp/webp
-  - libwebp/dec (1.0.2):
-    - libwebp/core
-  - libwebp/demux (1.0.2):
-    - libwebp/core
-  - libwebp/dsp (1.0.2):
-    - libwebp/core
-  - libwebp/enc (1.0.2):
-    - libwebp/core
-  - libwebp/mux (1.0.2):
-    - libwebp/core
-  - libwebp/utils (1.0.2):
-    - libwebp/core
-  - libwebp/webp (1.0.2)
+  - libwebp/mux (1.1.0):
+    - libwebp/demux
+  - libwebp/webp (1.1.0)
   - React (0.60.0):
     - React-Core (= 0.60.0)
     - React-DevSupport (= 0.60.0)
@@ -107,7 +93,8 @@ PODS:
   - React-RCTWebSocket (0.60.0):
     - React-Core (= 0.60.0)
     - React-fishhook (= 0.60.0)
-  - RNFastImage (6.1.1):
+  - RNFastImage (8.0.0):
+    - Gifu (~> 3.0)
     - React
     - SDWebImage (~> 5.0)
     - SDWebImageWebPCoder (~> 0.2.3)
@@ -115,10 +102,10 @@ PODS:
     - React
   - RNVectorIcons (6.6.0):
     - React
-  - SDWebImage (5.0.6):
-    - SDWebImage/Core (= 5.0.6)
-  - SDWebImage/Core (5.0.6)
-  - SDWebImageWebPCoder (0.2.3):
+  - SDWebImage (5.5.2):
+    - SDWebImage/Core (= 5.5.2)
+  - SDWebImage/Core (5.5.2)
+  - SDWebImageWebPCoder (0.2.5):
     - libwebp (~> 1.0)
     - SDWebImage/Core (~> 5.0)
   - yoga (0.60.0.React)
@@ -126,6 +113,7 @@ PODS:
 DEPENDENCIES:
   - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
   - Folly (from `../node_modules/react-native/third-party-podspecs/Folly.podspec`)
+  - Gifu (from `https://github.com/RichardFevrier/Gifu.git`, branch `objc`)
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
   - React (from `../node_modules/react-native/`)
   - React-Core (from `../node_modules/react-native/React`)
@@ -135,7 +123,7 @@ DEPENDENCIES:
   - React-jsi (from `../node_modules/react-native/ReactCommon/jsi`)
   - React-jsiexecutor (from `../node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
-  - react-native-image-picker (from `/Users/dylan/repos/react-native-fast-image/ReactNativeFastImageExample/node_modules/react-native-image-picker`)
+  - react-native-image-picker (from `/Users/Richard/Developpement/Projets/react-native-fast-image/ReactNativeFastImageExample/node_modules/react-native-image-picker`)
   - React-RCTActionSheet (from `../node_modules/react-native/Libraries/ActionSheetIOS`)
   - React-RCTAnimation (from `../node_modules/react-native/Libraries/NativeAnimation`)
   - React-RCTBlob (from `../node_modules/react-native/Libraries/Blob`)
@@ -146,13 +134,13 @@ DEPENDENCIES:
   - React-RCTText (from `../node_modules/react-native/Libraries/Text`)
   - React-RCTVibration (from `../node_modules/react-native/Libraries/Vibration`)
   - React-RCTWebSocket (from `../node_modules/react-native/Libraries/WebSocket`)
-  - RNFastImage (from `/Users/dylan/repos/react-native-fast-image/ReactNativeFastImageExample/node_modules/react-native-fast-image`)
-  - RNGestureHandler (from `/Users/dylan/repos/react-native-fast-image/ReactNativeFastImageExample/node_modules/react-native-gesture-handler`)
-  - RNVectorIcons (from `/Users/dylan/repos/react-native-fast-image/ReactNativeFastImageExample/node_modules/react-native-vector-icons`)
+  - RNFastImage (from `/Users/Richard/Developpement/Projets/react-native-fast-image/ReactNativeFastImageExample/node_modules/react-native-fast-image`)
+  - RNGestureHandler (from `/Users/Richard/Developpement/Projets/react-native-fast-image/ReactNativeFastImageExample/node_modules/react-native-gesture-handler`)
+  - RNVectorIcons (from `/Users/Richard/Developpement/Projets/react-native-fast-image/ReactNativeFastImageExample/node_modules/react-native-vector-icons`)
   - yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - boost-for-react-native
     - libwebp
     - SDWebImage
@@ -163,6 +151,9 @@ EXTERNAL SOURCES:
     :podspec: "../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec"
   Folly:
     :podspec: "../node_modules/react-native/third-party-podspecs/Folly.podspec"
+  Gifu:
+    :branch: objc
+    :git: https://github.com/RichardFevrier/Gifu.git
   glog:
     :podspec: "../node_modules/react-native/third-party-podspecs/glog.podspec"
   React:
@@ -182,7 +173,7 @@ EXTERNAL SOURCES:
   React-jsinspector:
     :path: "../node_modules/react-native/ReactCommon/jsinspector"
   react-native-image-picker:
-    :path: "/Users/dylan/repos/react-native-fast-image/ReactNativeFastImageExample/node_modules/react-native-image-picker"
+    :path: "/Users/Richard/Developpement/Projets/react-native-fast-image/ReactNativeFastImageExample/node_modules/react-native-image-picker"
   React-RCTActionSheet:
     :path: "../node_modules/react-native/Libraries/ActionSheetIOS"
   React-RCTAnimation:
@@ -204,20 +195,26 @@ EXTERNAL SOURCES:
   React-RCTWebSocket:
     :path: "../node_modules/react-native/Libraries/WebSocket"
   RNFastImage:
-    :path: "/Users/dylan/repos/react-native-fast-image/ReactNativeFastImageExample/node_modules/react-native-fast-image"
+    :path: "/Users/Richard/Developpement/Projets/react-native-fast-image/ReactNativeFastImageExample/node_modules/react-native-fast-image"
   RNGestureHandler:
-    :path: "/Users/dylan/repos/react-native-fast-image/ReactNativeFastImageExample/node_modules/react-native-gesture-handler"
+    :path: "/Users/Richard/Developpement/Projets/react-native-fast-image/ReactNativeFastImageExample/node_modules/react-native-gesture-handler"
   RNVectorIcons:
-    :path: "/Users/dylan/repos/react-native-fast-image/ReactNativeFastImageExample/node_modules/react-native-vector-icons"
+    :path: "/Users/Richard/Developpement/Projets/react-native-fast-image/ReactNativeFastImageExample/node_modules/react-native-vector-icons"
   yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
+
+CHECKOUT OPTIONS:
+  Gifu:
+    :commit: b9ab913ca7efb7844b0640411306e54ef6fc00ab
+    :git: https://github.com/RichardFevrier/Gifu.git
 
 SPEC CHECKSUMS:
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
   DoubleConversion: 5805e889d232975c086db112ece9ed034df7a0b2
   Folly: 30e7936e1c45c08d884aa59369ed951a8e68cf51
+  Gifu: 9598688f757275406fb003edb19b64e56373b362
   glog: 1f3da668190260b06b429bb211bfbee5cd790c28
-  libwebp: b068a3bd7c45f7460f6715be7bed1a18fd5d6b48
+  libwebp: 946cb3063cea9236285f7e9a8505d806d30e07f3
   React: 4b3c068e793e96672dcd186a2b572fac43e4b031
   React-Core: 3dc86b22920597f813c62a96db3165950b64826b
   React-cxxreact: 0dacb291e59b81e7c3f22a2118bee853ba8a60d2
@@ -237,13 +234,13 @@ SPEC CHECKSUMS:
   React-RCTText: 685fca2e13b024271048e7e247ef24476f28a41e
   React-RCTVibration: 4ee1cf208ab17a50fafb1c16ffe28fe594a64e4f
   React-RCTWebSocket: fca087d583724aa0e5fef7d911f0f2a28d0f2736
-  RNFastImage: 1931a5a201e8e4123a0bea419ce02c774d512c6f
+  RNFastImage: 14d6abd8fc1b4ee3bc8ee0a0835039d8bef4fc93
   RNGestureHandler: 5329a942fce3d41c68b84c2c2276ce06a696d8b0
   RNVectorIcons: 0bb4def82230be1333ddaeee9fcba45f0b288ed4
-  SDWebImage: 920f1a2ff1ca8296ad34f6e0510a1ef1d70ac965
-  SDWebImageWebPCoder: 7568737603c50f6237850afedd7e9e28e5917e6b
+  SDWebImage: 4d5c027c935438f341ed33dbac53ff9f479922ca
+  SDWebImageWebPCoder: 947093edd1349d820c40afbd9f42acb6cdecd987
   yoga: 616fde658be980aa60a2158835170f3f9c2d04b4
 
-PODFILE CHECKSUM: 7b4a00390df1c4ff9550673b474ffbe2cf75e8c6
+PODFILE CHECKSUM: c4bbad94974def052b98442ad95b937f37106e7b
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.8.4

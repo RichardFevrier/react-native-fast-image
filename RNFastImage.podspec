@@ -18,4 +18,5 @@ Pod::Spec.new do |s|
   s.dependency 'React'
   s.dependency 'SDWebImage', '~> 5.0'
   s.dependency 'SDWebImageWebPCoder', '~> 0.2.3'
+  s.dependency 'Gifu', '~> 3.0'
 end
